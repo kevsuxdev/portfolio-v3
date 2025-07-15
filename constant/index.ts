@@ -1,0 +1,1 @@
+export const myTitles = ['Frontend', 'Backend', 'Full-Stack']
