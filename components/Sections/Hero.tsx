@@ -4,7 +4,8 @@ import GridSection from '@/components/GridSection'
 import DefaultButton from '@/components/Buttons/DefaultButton'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import TitleMarquee from '../TitleMarquee'
+import TitleMarquee from '@/components/TitleMarquee'
+import Header from '@/components/Header/Header'
 
 const containerHover = {
     initial: {
@@ -22,6 +23,7 @@ const containerHover = {
 const Hero = () => {
   return (
     <GridSection className='flex flex-col items-center justify-center gap-5 relative'>
+        <Header/>
         <article className='bg-accent rounded-full px-6 py-2 text-sm font-medium flex items-center gap-2'>
           <div className='w-2 h-2 rounded-full bg-primary'/>
           <h1>Available For Work</h1>
