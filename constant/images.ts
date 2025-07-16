@@ -19,6 +19,10 @@ import FundayCover from '@/public/images/covers/funday-cover.png'
 
 import FramerMotionIcon from '@/public/icons/tools/framer-motion-icon.png'
 
+import CleanCodeIcon from '@/public/icons/clean-code-icon.png'
+import CollaborativeIcon from '@/public/icons/collab-workflow-icon.png'
+import ReliableDeliveryIcon from '@/public/icons/reliable-delivery-icon.png'
+
 export const images = {
     html: HTMLIcon,
     css: CSSIcon,
@@ -39,5 +43,9 @@ export const images = {
     monetra: MonetraCover,
     funday: FundayCover,
 
-    framerMotion: FramerMotionIcon
+    framerMotion: FramerMotionIcon,
+
+    cleanCode: CleanCodeIcon,
+    collaborative: CollaborativeIcon,
+    reliable: ReliableDeliveryIcon
 }

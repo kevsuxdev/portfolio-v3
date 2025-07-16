@@ -1,4 +1,4 @@
-import { images } from "@/constant/images"
+import { images } from '@/constant/images'
 
 export const myTitles = ['Frontend', 'Backend', 'Full-Stack']
 
@@ -11,32 +11,33 @@ export const listOfProjects = [
     coverPhoto: images.monetra,
     title: 'Monetra – Full-Stack Personal Finance Tracker Built for Clarity',
     technologies: [
-        images.react,
-        images.next,
-        images.tailwind,
-        images.postgreSQL,
-        images.prisma,
+      images.react,
+      images.next,
+      images.tailwind,
+      images.postgreSQL,
+      images.prisma,
     ],
     link: {
       title: 'Monetra',
-      href: 'https://monetraa.vercel.app/'
-    }
+      href: 'https://monetraa.vercel.app/',
+    },
   },
   {
     id: 2,
     type: 'Frontend',
     coverPhoto: images.kaha,
-    title: 'Kaha Construction – Modern Website for a Design-Forward Construction Firm',
+    title:
+      'Kaha Construction – Modern Website for a Design-Forward Construction Firm',
     technologies: [
-        images.react,
-        images.next,
-        images.tailwind,
-        images.framerMotion
+      images.react,
+      images.next,
+      images.tailwind,
+      images.framerMotion,
     ],
     link: {
       title: 'Kaha Construction',
-      href: 'https://www.kahaconstruction.com/'
-    }
+      href: 'https://www.kahaconstruction.com/',
+    },
   },
   {
     id: 3,
@@ -44,11 +45,11 @@ export const listOfProjects = [
     coverPhoto: images.funday,
     title: 'Funday – Minimal Savings & Expense Tracker Web App',
     technologies: [
-        images.mongoDB,
-        images.express,
-        images.react,
-        images.node,
-        images.tailwind,
+      images.mongoDB,
+      images.express,
+      images.react,
+      images.node,
+      images.tailwind,
     ],
   },
 ]
@@ -68,4 +69,28 @@ export const listOfTechnologies = [
   { id: 12, name: 'PostgreSQL', coverImage: images.postgreSQL },
   { id: 13, name: 'MySQL', coverImage: images.mySQL },
   { id: 14, name: 'MongoDB', coverImage: images.mongoDB },
+]
+
+export const deliverables = [
+  {
+    id: 1,
+    icon: images.cleanCode,
+    title: 'Clean Code',
+    description:
+      'I write structured, maintainable code that follows best practices—ensuring your product remains fast, scalable, and easy to build on.',
+  },
+  {
+    id: 2,
+    icon: images.collaborative,
+    title: 'Collaborative Workflow',
+    description:
+      'I communicate clearly and work closely with clients or teams, making feedback loops smooth and ensuring every step stays aligned with your goals.',
+  },
+  {
+    id: 3,
+    icon: images.reliable,
+    title: 'Reliable Delivery',
+    description:
+      'You can count on me to ship quality work on time—tested, refined, and ready for real-world use without unnecessary delays.',
+  },
 ]

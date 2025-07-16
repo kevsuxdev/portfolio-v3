@@ -4,7 +4,12 @@ import SectionHeader from '@/components/Header/SectionHeader'
 import { listOfProjects, projectFilters } from '@/constant'
 import DefaultButton from '../Buttons/DefaultButton'
 import FeaturedProjectCard from '../Cards/FeaturedProjectCard'
-import { motion } from 'framer-motion'
+import { easeOut, motion } from 'framer-motion'
+
+const projectCardVariant = {
+    initial: { opacity: 0, y: -50 },
+    animate: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, duration: 0.5, ease: easeOut } }
+}
 
 const FeaturedProjects = () => {
 
@@ -12,11 +17,13 @@ const FeaturedProjects = () => {
   const [projects, setProjects] = useState(listOfProjects)
 
   useEffect(() => {
+
     if (projectTitle === 'All') {
-        return setProjects(listOfProjects)
+        setProjects(listOfProjects)
+        return
     }
+
     setProjects(listOfProjects.filter((project) => project.type === projectTitle))
-    return () => {}
   }, [projectTitle])
 
   return (
@@ -37,13 +44,13 @@ const FeaturedProjects = () => {
             ))}
         </article>
         {projects.length > 0 ? (
-            <aside className='grid grid-cols-3 w-full gap-10'>
+            <motion.aside className='grid grid-cols-3 w-full gap-10'>
                 {projects.map((project) => (
-                    <motion.article key={project.id}>
+                    <motion.article variants={projectCardVariant} initial='initial' whileInView='animate' viewport={{ once: true }}  key={project.id}>
                         <FeaturedProjectCard {...project}/>
                     </motion.article>
                 ))}
-            </aside>
+            </motion.aside>
         ) : (
             <h2 className='text-3xl font-semibold uppercase text-primary'>No Projects Yet</h2>
         )}
