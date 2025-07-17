@@ -7,12 +7,12 @@ import Image from 'next/image'
 
 const HowIDeliverValue = () => {
   return (
-    <section className='p-32 flex flex-col items-center justify-center gap-10'>
+    <section className='p-32 flex flex-col max-lg:px-10 items-center justify-center gap-10'>
       <SectionHeader
         header="How I Deliver Value"
         description="More than just code—it's about quality, communication, and outcomes."
       />
-      <article className='w-full grid grid-cols-3 gap-10'>
+      <article className='w-full grid grid-cols-3 max-lg:grid-cols-1 gap-10'>
         {deliverables.map((action) => (
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -27,7 +27,7 @@ const HowIDeliverValue = () => {
                     width={65}
                     height={50}
                 />
-                <h1 className='text-xl font-semibold'>{action.title}</h1>
+                <h1 className='text-xl font-semibold text-center'>{action.title}</h1>
                 <p>{action.description}</p>
             </motion.div>
         ))}

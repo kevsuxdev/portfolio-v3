@@ -21,7 +21,7 @@ const FeaturedProjectCard = ({ coverPhoto, title, technologies, link } : Props) 
             alt='Monetra Cover'
             width={500}
             height={500}
-            className='object-contain rounded-xl'
+            className='object-contain rounded-xl w-full'
         />
         <h3 className='text-base font-semibold'>{title}</h3>
         <div className='flex items-start gap-2 w-full flex-wrap'>

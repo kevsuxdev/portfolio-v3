@@ -4,7 +4,7 @@ import ContactForm from '@/components/Forms/ContactForm'
 
 const LetsWorkTogether = () => {
   return (
-    <section id='contact' className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
+    <section id='contact' className='min-h-screen p-32 max-md:px-10 flex flex-col items-center justify-center gap-10'>
       <SectionHeader
         header="Let's Work Together"
         headerCSS='text-5xl'

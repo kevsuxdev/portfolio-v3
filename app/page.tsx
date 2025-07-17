@@ -8,7 +8,7 @@ import React from 'react'
 
 const RootPage = () => {
   return (
-    <main>
+    <main className='overflow-x-hidden'>
       <Hero/>
       <FeaturedProjects/>
       <WhoAmI/>

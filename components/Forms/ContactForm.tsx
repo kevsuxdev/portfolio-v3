@@ -44,9 +44,9 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className='space-y-8 w-2/3'
+        className='space-y-8 w-2/3 max-xl:w-full'
       >
-        <article className='flex items-center justify-between gap-5'>
+        <article className='flex items-center justify-between gap-5 max-md:flex-col w-full'>
           <FormField
             control={form.control}
             name='name'

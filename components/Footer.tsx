@@ -5,8 +5,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='p-32 flex items-start justify-between gap-10'>
-      <aside className='flex flex-col gap-5'>
+    <footer className='p-32 py-20 flex max-md:px-10 items-start justify-between gap-10 bg-accent max-md:flex-col-reverse'>
+      <aside className='flex flex-col gap-5 max-md:items-center max-md:w-full'>
         <h1 className='text-3xl font-logo'>Kevs Dev</h1>
         <article className='flex items-start gap-5'>
           {socials.map(({ id, name, icon, href }) => (
@@ -23,7 +23,7 @@ const Footer = () => {
         <p className='text-base leading-none'>markkevinromero.work@gmail.com</p>
         <p className='text-base leading-none text-white/40'>© 2025 Kevs Dev. All rights reserved.</p>
       </aside>
-      <aside className='grid grid-cols-2 gap-10'>
+      <aside className='grid grid-cols-2 gap-10 max-md:w-full max-md:gap-0'>
           {footerLinks.map(({ id, header, links }) => (
             <article key={id} className='space-y-3'>
               <h3 className='font-semibold text-white/40 tracking-wide'>{header.toUpperCase()}</h3>

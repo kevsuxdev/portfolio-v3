@@ -34,7 +34,7 @@ const FeaturedProjects = () => {
   }, [projectTitle])
 
   return (
-    <section id='projects' className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
+    <section id='projects' className='min-h-screen p-32 max-lg:px-10 flex flex-col items-center justify-center gap-10'>
         <SectionHeader header='Featured Projects' description='Here’s What I’ve Built — Each One With a Purpose'/>
         <article className='flex items-center gap-2'>
             {projectFilters.map((title, index) => (
@@ -42,7 +42,7 @@ const FeaturedProjects = () => {
                     handleClick={() => {
                         setProjectTitle(title)
                     }}
-                    className='hover:bg-primary hover:text-background'
+                    className='hover:bg-primary hover:text-background text-nowrap'
                     variant={projectTitle === title ? 'fill' : 'outline'}
                     key={index}
                 >
@@ -51,7 +51,7 @@ const FeaturedProjects = () => {
             ))}
         </article>
         {projects.length > 0 ? (
-            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-3 w-full gap-10'>
+            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-3 max-lg:grid-cols-1 w-full gap-10'>
                 {projects.map((project) => (
                     <motion.article variants={projectCardVariant}  key={project.id}>
                         <FeaturedProjectCard {...project}/>

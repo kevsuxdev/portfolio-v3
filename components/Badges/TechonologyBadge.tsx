@@ -15,7 +15,7 @@ const TechonologyBadge = ({ coverImage, name } : Props) => {
             width={20}
             height={50}
         />
-        <h3 className='font-medium text-base'>{name}</h3>
+        <h3 className='font-medium text-base max-md:text-sm'>{name}</h3>
     </article>
   )
 }
