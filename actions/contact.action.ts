@@ -52,100 +52,58 @@ export const sendContactFormEmail = async (data: contactType) => {
             to: process.env.NODEMAILER_USERNAME,
             subject: "New Message from Your Portfolio",
             html: `
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>New Contact Message</title>
-                <style>
-                body {
-                    margin: 0;
-                    padding: 0;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background: #f5f7fa;
-                    color: #333;
-                }
-                .email-container {
-                    max-width: 600px;
-                    margin: 40px auto;
-                    background: #ffffff;
-                    border-radius: 12px;
-                    overflow: hidden;
-                    box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-                    border-top: 8px solid #4dffbe;
-                }
-                .header {
-                    background: linear-gradient(135deg, #4dffbe, #34d6a9);
-                    color: #fff;
-                    padding: 30px;
-                    text-align: center;
-                }
-                .header h1 {
-                    margin: 0;
-                    font-size: 26px;
-                    letter-spacing: -0.5px;
-                }
-                .content {
-                    padding: 30px;
-                }
-                .content h2 {
-                    font-size: 20px;
-                    margin-bottom: 20px;
-                    color: #4b5563;
-                }
-                .info p {
-                    margin: 10px 0;
-                    font-size: 16px;
-                }
-                .info span {
-                    font-weight: 600;
-                    color: #111827;
-                }
-                .message-box {
-                    margin-top: 20px;
-                    background: #f9fafb;
-                    padding: 20px;
-                    border-left: 4px solid #4dffbe;
-                    font-style: italic;
-                    color: #374151;
-                    white-space: pre-wrap;
-                }
-                .footer {
-                    padding: 20px;
-                    text-align: center;
-                    font-size: 12px;
-                    color: #9ca3af;
-                }
-                .footer a {
-                    color: #4dffbe;
-                    text-decoration: none;
-                }
-                </style>
-            </head>
-            <body>
-                <div class="email-container">
-                <div class="header">
-                    <h1>📩 New Portfolio Message</h1>
+             <div style="font-family: 'Helvetica Neue', sans-serif; max-width: 520px; margin: auto; padding: 32px 24px; background-color: #ffffff; border: 1px solid #eee; border-radius: 12px; color: #333;">
+                <div style="text-align: center; margin-bottom: 24px;">
+                <h2 style="color: #4dffbe; margin: 0;">📬 New Contact Message</h2>
                 </div>
-                <div class="content">
-                    <h2>You’ve received a new message 🚀</h2>
-                    <div class="info">
-                    <p><span>Name:</span> ${name}</p>
-                    <p><span>Company:</span> ${companyName || '—'}</p>
-                    <p><span>Email:</span> ${email}</p>
-                    </div>
-                    <div class="message-box">
-                    ${message}
-                    </div>
+                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 12px;">
+                You've received a new message from your portfolio contact form.
+                </p>
+
+                <div style="margin-bottom: 16px; font-size: 15px; line-height: 1.5;">
+                <p><strong style="color: #111827;">Name:</strong> ${name}</p>
+                <p><strong style="color: #111827;">Email:</strong> ${email}</p>
+                <p><strong style="color: #111827;">Company:</strong> ${companyName || '—'}</p>
                 </div>
-                <div class="footer">
-                    This message was submitted from your portfolio contact form. <br />
-                    <a href="https://your-portfolio.com">your-portfolio.com</a>
+
+                <div style="background: #f9fafb; padding: 16px 20px; border-left: 4px solid #4dffbe; font-style: italic; font-size: 15px; color: #374151; white-space: pre-wrap;">
+                ${message}
                 </div>
+
+                <hr style="margin: 32px 0; border: none; border-top: 1px solid #eee;" />
+
+                <p style="font-size: 12px; color: #888; text-align: center;">
+                This message was submitted via your portfolio site.<br/>
+                <a href="https://kevsuxdev.vercel.app/" style="color: #4dffbe; text-decoration: none;">Kevs Dev</a>
+                </p>
+            </div>
+            `
+        })
+
+        /* Send to Customer */
+        await transport.sendMail({
+            from: '"Kevs Dev" <markkevinromero.work@gmail.com>',
+            to: email,
+            subject: "Thanks for Reaching Out – I Got Your Message!",
+            html: `
+            <div style="font-family: 'Helvetica Neue', sans-serif; max-width: 520px; margin: auto; padding: 32px 24px; background-color: #ffffff; border: 1px solid #eee; border-radius: 12px; color: #333;">
+                <div style="text-align: center; margin-bottom: 24px;">
+                <h2 style="color: #4dffbe; margin: 0;">Message Received ✅</h2>
                 </div>
-            </body>
-            </html>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                Hi there,
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                Just letting you know that your message has been successfully received.
+                I appreciate you reaching out and will respond within 1–2 business days.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; margin: 0 0 24px 0;">
+                If it's something urgent, feel free to send a follow-up or reach out on any of my socials.
+                </p>
+                <p style="font-size: 16px; margin-bottom: 0;">– Kevs Dev</p>
+                <p style="font-size: 14px; color: #888; margin-top: 4px;">Full-Stack Developer</p>
+                <hr style="margin: 32px 0; border: none; border-top: 1px solid #eee;" />
+            </div>
             `
         })
 
