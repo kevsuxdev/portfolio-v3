@@ -14,9 +14,11 @@ import { contactSchema, contactType } from '@/validation/contact.validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import DefaultButton from '../Buttons/DefaultButton'
 import { Textarea } from '../ui/textarea'
-import { SendHorizontal } from 'lucide-react'
+import { SendHorizontal, Smile } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { animateOnClick } from '@/constant/animation'
+import { sendContactFormEmail } from '@/actions/contact.action'
+import { ErrorToast, SuccessToast } from '@/components/Toast'
 
 const ContactForm = () => {
   const form = useForm<contactType>({
@@ -30,7 +32,12 @@ const ContactForm = () => {
   })
 
   const handleSubmit = async (values: contactType) => {
-    console.log(values)
+    const { success, message } = await sendContactFormEmail(values)
+
+    if (!success) return ErrorToast(message)
+
+    form.reset()
+    return SuccessToast(message)
   }
 
   return (
@@ -95,9 +102,11 @@ const ContactForm = () => {
           )}
         />
         <motion.div variants={animateOnClick} initial="initial" whileTap='animate' className='w-fit'>
-          <DefaultButton disabled={form.formState.isSubmitting} type='submit'>
-            {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
-            <motion.span variants={animateOnClick} ><SendHorizontal size={20} /></motion.span>
+          <DefaultButton disabled={form.formState.isSubmitting || form.formState.isSubmitSuccessful} type='submit'>
+            {form.formState.isSubmitting ? 'Sending...' : form.formState.isSubmitSuccessful ? 'Thank you ' : 'Send Message'}
+            <motion.span variants={animateOnClick} >
+              {form.formState.isSubmitSuccessful ? <Smile size={20}/> : <SendHorizontal size={20} />}
+            </motion.span>
           </DefaultButton>
         </motion.div>
       </form>

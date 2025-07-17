@@ -1,8 +1,12 @@
 import { images } from '@/constant/images'
 
-export const myTitles = ['Frontend', 'Backend', 'Full-Stack']
+export const myTitles = [
+  'Frontend Development',
+  'Full-Stack Development',
+  'Web Design',
+]
 
-export const projectFilters = ['All', 'Frontend', 'Backend', 'Full-Stack']
+export const projectFilters = ['All', 'Frontend', 'Full-Stack']
 
 export const listOfProjects = [
   {
@@ -92,5 +96,54 @@ export const deliverables = [
     title: 'Reliable Delivery',
     description:
       'You can count on me to ship quality work on time—tested, refined, and ready for real-world use without unnecessary delays.',
+  },
+]
+
+export const socials = [
+  {
+    id: 1,
+    name: 'Email',
+    icon: images.email,
+    href: 'mailto:markkevinromero.work@gmail.com',
+  },
+  {
+    id: 2,
+    name: 'Facebook',
+    icon: images.facebook,
+    href: 'https://www.facebook.com/kevinromero00/',
+  },
+  {
+    id: 3,
+    name: 'Github',
+    icon: images.github,
+    href: 'https://github.com/kevsuxdev',
+  },
+  {
+    id: 4,
+    name: 'Instagram',
+    icon: images.instagram,
+    href: 'https://www.instagram.com/kevsus_/',
+  },
+]
+
+export const footerLinks = [
+  {
+    id: 1,
+    header: 'Quick Links',
+    links: [
+      { name: 'Home', href: '#home' },
+      { name: 'Who Am I', href: '#who-am-i' },
+      { name: 'Projects', href: '#projects' },
+      { name: 'Contact', href: '#contact' },
+    ],
+  },
+  {
+    id: 2,
+    header: 'Socials',
+    links: [
+      { name: 'Github', href: 'https://github.com/kevsuxdev' },
+      { name: 'Facebook', href: 'https://www.facebook.com/kevinromero00/' },
+      { name: 'Instagram', href: 'https://www.instagram.com/kevsus_/' },
+    ],
   },
 ]

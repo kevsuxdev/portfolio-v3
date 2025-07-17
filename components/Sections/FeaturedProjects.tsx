@@ -6,9 +6,18 @@ import DefaultButton from '../Buttons/DefaultButton'
 import FeaturedProjectCard from '../Cards/FeaturedProjectCard'
 import { easeOut, motion } from 'framer-motion'
 
+const containerVariant = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const projectCardVariant = {
     initial: { opacity: 0, y: -50 },
-    animate: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, duration: 0.5, ease: easeOut } }
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
 }
 
 const FeaturedProjects = () => {
@@ -17,17 +26,15 @@ const FeaturedProjects = () => {
   const [projects, setProjects] = useState(listOfProjects)
 
   useEffect(() => {
-
     if (projectTitle === 'All') {
         setProjects(listOfProjects)
         return
     }
-
     setProjects(listOfProjects.filter((project) => project.type === projectTitle))
   }, [projectTitle])
 
   return (
-    <section className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
+    <section id='projects' className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
         <SectionHeader header='Featured Projects' description='Here’s What I’ve Built — Each One With a Purpose'/>
         <article className='flex items-center gap-2'>
             {projectFilters.map((title, index) => (
@@ -44,9 +51,9 @@ const FeaturedProjects = () => {
             ))}
         </article>
         {projects.length > 0 ? (
-            <motion.aside className='grid grid-cols-3 w-full gap-10'>
+            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-3 w-full gap-10'>
                 {projects.map((project) => (
-                    <motion.article variants={projectCardVariant} initial='initial' whileInView='animate' viewport={{ once: true }}  key={project.id}>
+                    <motion.article variants={projectCardVariant}  key={project.id}>
                         <FeaturedProjectCard {...project}/>
                     </motion.article>
                 ))}

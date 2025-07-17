@@ -23,6 +23,11 @@ import CleanCodeIcon from '@/public/icons/clean-code-icon.png'
 import CollaborativeIcon from '@/public/icons/collab-workflow-icon.png'
 import ReliableDeliveryIcon from '@/public/icons/reliable-delivery-icon.png'
 
+import EmailIcon from '@/public/icons/socials/email.png'
+import FacebookIcon from '@/public/icons/socials/facebook.png'
+import GithubIcon from '@/public/icons/socials/github.png'
+import InstagramIcon from '@/public/icons/socials/instagram.png'
+
 export const images = {
     html: HTMLIcon,
     css: CSSIcon,
@@ -47,5 +52,10 @@ export const images = {
 
     cleanCode: CleanCodeIcon,
     collaborative: CollaborativeIcon,
-    reliable: ReliableDeliveryIcon
+    reliable: ReliableDeliveryIcon,
+
+    email: EmailIcon,
+    facebook: FacebookIcon,
+    github: GithubIcon,
+    instagram: InstagramIcon,
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto, Suez_One } from 'next/font/google'
+import { Toaster } from "@/components/ui/sonner"
 import './globals.css'
 
 const robotoFont = Roboto({
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${robotoFont.variable} ${suezOneFont.variable} antialiased`}
       >
         {children}
+        <Toaster position='top-center' />
       </body>
     </html>
   )

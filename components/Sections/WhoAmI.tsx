@@ -11,7 +11,7 @@ const technologyBadgeVariant = {
 
 const WhoAmI = () => {
   return (
-    <section className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
+    <section id='who-am-i' className='min-h-screen p-32 flex flex-col items-center justify-center gap-10'>
       <article className='flex flex-col gap-5 w-full'>
         <p className='text-sm text-primary font-bold'>Who Am I</p>
         <motion.h1

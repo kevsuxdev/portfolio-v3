@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import FeaturedProjects from '@/components/Sections/FeaturedProjects'
 import Hero from '@/components/Sections/Hero'
 import HowIDeliverValue from '@/components/Sections/HowIDeliverValue'
@@ -13,6 +14,7 @@ const RootPage = () => {
       <WhoAmI/>
       <HowIDeliverValue/>
       <LetsWorkTogether/>
+      <Footer/>
     </main>
   )
 }

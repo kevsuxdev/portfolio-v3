@@ -2,13 +2,14 @@ import { cn } from '@/lib/utils'
 import React, { ReactNode } from 'react'
 
 interface Props {
+  id?: string
   className?: string
   children: ReactNode
 }
 
-const GridSection = ({ className, children } : Props) => {
+const GridSection = ({ id, className, children } : Props) => {
   return (
-    <section className={cn('min-h-screen relative', className)}>
+    <section id={id} className={cn('min-h-screen relative', className)}>
       <div
         className='w-full absolute h-full bg-cover bg-no-repeat bg-center opacity-10 pointer-events-none'
         style={{ backgroundImage: 'url(/images/grid-image.png)' }}
