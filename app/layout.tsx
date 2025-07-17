@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto, Suez_One } from 'next/font/google'
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
+import Cursor from '@/components/Cursor'
 
 const robotoFont = Roboto({
   variable: '--font-roboto',
@@ -32,7 +33,8 @@ export default function RootLayout({
       >
         {children}
         <Toaster position='top-center' />
-        <Analytics/>
+        <Analytics />
+        <Cursor />
       </body>
     </html>
   )
