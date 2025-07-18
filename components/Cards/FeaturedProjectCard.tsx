@@ -5,6 +5,7 @@ import React from 'react'
 interface Props {
     coverPhoto: StaticImageData
     title: string
+    description: string
     type: string,
     technologies: StaticImageData[]
     link?: {
@@ -13,7 +14,10 @@ interface Props {
     }
 }
 
-const FeaturedProjectCard = ({ coverPhoto, title, technologies, link } : Props) => {
+const FeaturedProjectCard = ({ coverPhoto, title, description, technologies, link } : Props) => {
+
+
+
   return (
     <article className='p-8 bg-accent rounded-xl flex flex-col gap-4 w-full h-full'>
         <Image
@@ -23,7 +27,10 @@ const FeaturedProjectCard = ({ coverPhoto, title, technologies, link } : Props) 
             height={500}
             className='object-contain rounded-xl w-full'
         />
-        <h3 className='text-base font-semibold'>{title}</h3>
+        <article className='flex flex-col gap-2 w-full'>
+            <h3 className='text-lg font-semibold max-lg:text-base'>{title}</h3>
+            <p className='text-white/70 max-lg:text-sm'>{description}</p>
+        </article>
         <div className='flex items-start gap-2 w-full flex-wrap'>
             {technologies.map((technology, index) => (
                 <Image
@@ -45,7 +52,12 @@ const FeaturedProjectCard = ({ coverPhoto, title, technologies, link } : Props) 
                     >
                         Live at {link.title}
                     </Link>
-                ) : 'Not Published'
+                ) : <Link
+                        href='#contact'
+                        className='text-sm text-primary hover:underline'
+                    >
+                        Request Demo
+                    </Link>
             }
         </p>
     </article>

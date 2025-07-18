@@ -13,7 +13,8 @@ export const listOfProjects = [
     id: 1,
     type: 'Full-Stack',
     coverPhoto: images.monetra,
-    title: 'Monetra – Full-Stack Personal Finance Tracker Built for Clarity',
+    title: 'Monetra – All‑in‑One Personal Finance Dashboard',
+    description: "Monetra is a clean, modern financial dashboard that helps users organize multiple wallets, track spending in real time, and stay informed with instant notifications. Designed for clarity and control, it simplifies budgeting, transactions, and shared expense management—all from one intuitive interface.",
     technologies: [
       images.react,
       images.next,
@@ -32,6 +33,8 @@ export const listOfProjects = [
     coverPhoto: images.kaha,
     title:
       'Kaha Construction – Modern Website for a Design-Forward Construction Firm',
+    description:
+      'Kaha is a modern and responsive website crafted for a construction company that values both function and aesthetics. Designed with clean visuals, clear structure, and thoughtful user experience, the site reflects the firm’s commitment to quality craftsmanship and forward-thinking design. From showcasing projects to making it easy for clients to get in touch, the site supports both branding and business goals through a seamless digital experience.',
     technologies: [
       images.react,
       images.next,
@@ -48,6 +51,8 @@ export const listOfProjects = [
     type: 'Full-Stack',
     coverPhoto: images.funday,
     title: 'Funday – Minimal Savings & Expense Tracker Web App',
+    description:
+      'Funday is a web application designed to help users track their savings and expenses effortlessly. It gives clear insights into spending habits and helps you understand exactly where your money goes—making financial awareness simple and stress-free.',
     technologies: [
       images.mongoDB,
       images.express,

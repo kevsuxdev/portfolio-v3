@@ -24,7 +24,6 @@ useEffect(() => {
   window.addEventListener('mousemove', (event) => {
     coords.x = event.clientX
     coords.y = event.clientY
-    console.log(coords)
   })
 
   const animateCircles = () => {

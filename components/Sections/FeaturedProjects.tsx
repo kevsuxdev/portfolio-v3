@@ -51,7 +51,7 @@ const FeaturedProjects = () => {
             ))}
         </article>
         {projects.length > 0 ? (
-            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-3 max-lg:grid-cols-1 w-full gap-10'>
+            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-2 max-lg:grid-cols-1 w-full gap-10'>
                 {projects.map((project) => (
                     <motion.article variants={projectCardVariant}  key={project.id}>
                         <FeaturedProjectCard {...project}/>
@@ -59,7 +59,7 @@ const FeaturedProjects = () => {
                 ))}
             </motion.aside>
         ) : (
-            <h2 className='text-3xl font-semibold uppercase text-primary'>No Projects Yet</h2>
+            <h2 className='text-3xl font-semibold uppercase text-primary'>No Projects </h2>
         )}
     </section>
   )
