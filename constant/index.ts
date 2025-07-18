@@ -34,7 +34,7 @@ export const listOfProjects = [
     title:
       'Kaha Construction – Modern Website for a Design-Forward Construction Firm',
     description:
-      'Kaha is a modern and responsive website crafted for a construction company that values both function and aesthetics. Designed with clean visuals, clear structure, and thoughtful user experience, the site reflects the firm’s commitment to quality craftsmanship and forward-thinking design. From showcasing projects to making it easy for clients to get in touch, the site supports both branding and business goals through a seamless digital experience.',
+      'Kaha is a responsive website built for a design-forward construction firm. It highlights the company’s projects and values through clean visuals, a clear layout, and a seamless user experience—making it easy for clients to connect and explore their work.',
     technologies: [
       images.react,
       images.next,
