@@ -51,7 +51,7 @@ const FeaturedProjects = () => {
             ))}
         </article>
         {projects.length > 0 ? (
-            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-2 max-lg:grid-cols-1 w-full gap-10'>
+            <motion.aside variants={containerVariant} initial='initial' animate='animate' className='grid grid-cols-2 max-xl:grid-cols-1 w-full gap-10'>
                 {projects.map((project) => (
                     <motion.article variants={projectCardVariant}  key={project.id}>
                         <FeaturedProjectCard {...project}/>

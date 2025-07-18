@@ -12,7 +12,7 @@ const HowIDeliverValue = () => {
         header="How I Deliver Value"
         description="More than just code—it's about quality, communication, and outcomes."
       />
-      <article className='w-full grid grid-cols-3 max-lg:grid-cols-1 gap-10'>
+      <article className='w-full grid md:grid-cols-2 xl:grid-cols-3 m gap-10'>
         {deliverables.map((action) => (
             <motion.div
                 initial={{ opacity: 0, x: -50 }}

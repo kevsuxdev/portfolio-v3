@@ -17,7 +17,7 @@ const DefaultButton = ({ className, variant = 'fill', children, disabled = false
       type={type}
       onClick={handleClick}
       className={cn(
-          'font-medium text-sm  rounded-2xl p-2 px-8 cursor-pointer active:scale-98 duration-200 border border-transparent flex items-center justify-center gap-2',
+          'font-medium text-sm  rounded-2xl p-2 px-8 cursor-pointer active:scale-98 duration-200 border border-transparent flex items-center justify-center gap-2 text-nowrap',
           variant === 'fill' && 'text-background bg-primary',
           variant === 'outline' && 'border border-primary text-primary',
           className
