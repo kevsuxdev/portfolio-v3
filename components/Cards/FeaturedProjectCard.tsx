@@ -16,13 +16,11 @@ interface Props {
 
 const FeaturedProjectCard = ({ coverPhoto, title, description, technologies, link } : Props) => {
 
-
-
   return (
     <article className='p-8 bg-accent rounded-xl flex flex-col gap-4 w-full h-full'>
         <Image
             src={coverPhoto}
-            alt='Monetra Cover'
+            alt='Cover Image'
             width={500}
             height={500}
             className='object-contain rounded-xl w-full'
@@ -31,7 +29,7 @@ const FeaturedProjectCard = ({ coverPhoto, title, description, technologies, lin
             <h3 className='text-lg font-semibold max-lg:text-base'>{title}</h3>
             <p className='text-white/70 max-lg:text-sm'>{description}</p>
         </article>
-        <div className='flex items-start gap-2 w-full flex-wrap'>
+        <div className='flex items-start gap-2 w-full flex-wrap relative'>
             {technologies.map((technology, index) => (
                 <Image
                     key={index}
@@ -39,7 +37,7 @@ const FeaturedProjectCard = ({ coverPhoto, title, description, technologies, lin
                     alt='React Icon'
                     width={40}
                     height={50}
-                    className='bg-background p-2 rounded-lg'
+                    className='bg-background p-2 h-10 w-10 rounded-lg object-contain'
                 />
             ))}
         </div>

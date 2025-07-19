@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import SectionHeader from '@/components/Header/SectionHeader'
 import { listOfProjects, projectFilters } from '@/constant'
 import DefaultButton from '../Buttons/DefaultButton'
@@ -22,16 +22,20 @@ const projectCardVariant = {
 
 const FeaturedProjects = () => {
 
-  const [projectTitle, setProjectTitle] = useState("All")
   const [projects, setProjects] = useState(listOfProjects)
+  const [projectTitle, setProjectTitle] = useState("All")
 
-  useEffect(() => {
-    if (projectTitle === 'All') {
+  const handleTitles = (title: string) => {
+
+    if (title === 'All') {
+        setProjectTitle('All')
         setProjects(listOfProjects)
         return
     }
-    setProjects(listOfProjects.filter((project) => project.type === projectTitle))
-  }, [projectTitle])
+
+    setProjectTitle(title)
+    setProjects(listOfProjects.filter((project) => project.type === title))
+  }
 
   return (
     <section id='projects' className='min-h-screen p-32 max-lg:px-10 flex flex-col items-center justify-center gap-10'>
@@ -39,9 +43,7 @@ const FeaturedProjects = () => {
         <article className='flex items-center gap-2'>
             {projectFilters.map((title, index) => (
                 <DefaultButton
-                    handleClick={() => {
-                        setProjectTitle(title)
-                    }}
+                    handleClick={() => handleTitles(title)}
                     className='hover:bg-primary hover:text-background text-nowrap'
                     variant={projectTitle === title ? 'fill' : 'outline'}
                     key={index}

@@ -14,7 +14,8 @@ export const listOfProjects = [
     type: 'Full-Stack',
     coverPhoto: images.monetra,
     title: 'Monetra – All‑in‑One Personal Finance Dashboard',
-    description: "Monetra is a clean, modern financial dashboard that helps users organize multiple wallets, track spending in real time, and stay informed with instant notifications. Designed for clarity and control, it simplifies budgeting, transactions, and shared expense management—all from one intuitive interface.",
+    description:
+      'Monetra is a clean, modern financial dashboard that helps users organize multiple wallets, track spending in real time, and stay informed with instant notifications. Designed for clarity and control, it simplifies budgeting, transactions, and shared expense management—all from one intuitive interface.',
     technologies: [
       images.react,
       images.next,
@@ -59,6 +60,19 @@ export const listOfProjects = [
       images.react,
       images.node,
       images.tailwind,
+    ],
+  },
+  {
+    id: 4,
+    type: 'Full-Stack',
+    coverPhoto: images.cassa,
+    title: 'Cassa Caffea – Streamlined POS & Order Management for Coffee Shop',
+    description:
+      'Cassa Coffea is a POS system built for a coffee shop, designed as a school project. It features a cashier-friendly interface to handle orders, payments, and sales efficiently—making daily operations faster and more organized.',
+    technologies: [
+      images.laravel,
+      images.tailwind,
+      images.mySQL,
     ],
   },
 ]

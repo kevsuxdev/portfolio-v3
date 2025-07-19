@@ -16,6 +16,7 @@ import TypeScriptIcon from '@/public/icons/technologies/typescript-icon.png'
 import KahaCover from '@/public/images/covers/kaha-cover.png'
 import MonetraCover from '@/public/images/covers/monetra-cover.png'
 import FundayCover from '@/public/images/covers/funday-cover.png'
+import CassaCoffeaCover from '@/public/images/covers/cassa-coffea-cover.png'
 
 import FramerMotionIcon from '@/public/icons/tools/framer-motion-icon.png'
 
@@ -47,6 +48,7 @@ export const images = {
     kaha: KahaCover,
     monetra: MonetraCover,
     funday: FundayCover,
+    cassa: CassaCoffeaCover,
 
     framerMotion: FramerMotionIcon,
 
